@@ -8,12 +8,12 @@ A Flask-based web application designed to generate and manage secure entry QR co
 * **Automated Dispatch:** Generates and sends QR codes directly to guests
 * **Security Override:** Emergency access with admin notifications
 * **Environment-Based Configuration:** Secure handling of sensitive credentials via environment variables
-* **One-Click Launch (Windows Only):** Run the application using run.bat
+* **One-Click Launch (Windows Only):** Run the application using `run.bat`
 
 ## 🛠️ Tech Stack
 * **Backend:** Python 3.10+ (Flask)
 * **Frontend:** HTML5, CSS3, JavaScript (Quill.js)
-* **Email Service:** SMTP (configurable via .env)
+* **Email Service:** SMTP (configurable via `.env`)
 * **Environment:** Cross-platform support (Windows/Linux/MacOS)
 
 ## 📌 Deployment Note
