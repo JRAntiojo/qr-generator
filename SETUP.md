@@ -85,6 +85,14 @@ Google Account → Security → App Passwords
 
 # 6. Run Application
 
+Option 1: One-click run (Windows Only)
+
+```bash
+run.bat
+```
+
+Option 2: Manual setup
+
 ```bash
 python app.py
 ```
