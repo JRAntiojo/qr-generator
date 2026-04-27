@@ -3,15 +3,17 @@
 A Flask-based web application designed to generate and manage secure entry QR codes for guests. This project was developed to streamline check-in processes while maintaining a high standard of administrative control and security.
 
 ## 🚀 Key Features
-* **Dynamic Branding:** Change the establishment name via the settings.
-* **Rich Text Emails:** Fully customizable email templates using a built-in WYSIWYG editor (Quill.js).
-* **Automated Dispatch:** Generates a unique QR code and emails it directly to the guest upon form submission.
-* **Security Override:** Includes a master override feature with automatic admin email notifications for emergency access.
-* **Secure Configuration:** Sensitive credentials and security keys are managed via environment variables.
+* **Dynamic Branding:** Update establishment name via settings panel
+* **Rich Text Emails:** WYSIWYG editor using Quill.js
+* **Automated Dispatch:** Generates and sends QR codes directly to guests
+* **Security Override:** Emergency access with admin notifications
+* **Environment-Based Configuration:** Secure handling of sensitive credentials via environment variables
+* **One-Click Launch (Windows Only):** Run the application using run.bat
 
 ## 🛠️ Tech Stack
 * **Backend:** Python 3.10+ (Flask)
 * **Frontend:** HTML5, CSS3, JavaScript (Quill.js)
+* **Email Service:** SMTP (configurable via .env)
 * **Environment:** Cross-platform support (Windows/Linux/MacOS)
 
 ## 📌 Deployment Note
@@ -24,6 +26,7 @@ qr-generator/
 ├── app.py
 ├── requirements.txt
 ├── .env.example
+├── run.bat
 ├── README.md
 ├── SETUP.md
 |
@@ -43,5 +46,6 @@ qr-generator/
 - `.env.example` – Template for environment variables (copy as `.env` and configure).
 - `templates/` – HTML templates for the user interface.
 - `static/` – Static assets including CSS and generated QR code images.
+- `run.bat` – One-click launcher to automatically set up the environment, start the Flask server, and open the application in the browser (Windows only).
 - `SETUP.md` – Step-by-step installation and local setup guide.
 - `README.md` – Project overview and documentation.
