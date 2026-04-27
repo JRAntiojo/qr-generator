@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>QR Code Generator</h1>
+            <a href="{{ url_for('settings') }}" class="settings-link">⚙️ Settings</a>
+        </div>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <!-- Main Content -->
+        <div class="main">
+            <!-- Form Section -->
+            <form method="POST" class="card">
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" name="start_date" required onkeydown="return false;">
+                </div>
+
+                <div class="form-group">
+                    <label>Check-out Date</label>
+                    <input type="date" name="end_date" required onkeydown="return false;">
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                        <label>Check-in Time</label>
+                        <input type="time" name="check_in" value="14:00" required onkeydown="return false;">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Check-out Time</label>
+                        <input type="time" name="check_out" value="11:00" required onkeydown="return false;">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Recipient Email</label>
+                    <input type="email" name="email" placeholder="guest@example.com" required>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" name="generate_qr" class="btn primary">
+                        Generate & Send QR Code
+                    </button>
+
+                    <button type="submit" name="override_qr"
+                            class="btn secondary"
+                            formnovalidate
+                            onclick="return confirmOverride()">
+                        Admin Override
+                    </button>
+                </div>
+            </form>
+
+            <!-- QR Section -->
+            <div class="card qr-section">
+
+                {% if qr_filename %}
+                    {% if is_override %}
+                        <h3 class="warning">⚠️ Override Generated</h3>
+                    {% else %}
+                        <h3>Your QR Code</h3>
+                    {% endif %}
+
+                    <div class="qr-content">
+                        <img src="{{ url_for('static', filename='qrcodes/' + qr_filename) }}" class="qr-img">
+
+                        <a href="{{ url_for('static', filename='qrcodes/' + qr_filename) }}" 
+                            download 
+                            class="btn secondary download-btn">
+                            Download
+                        </a>
+                    </div>
+
+                {% else %}
+                    <div class="placeholder">
+                        📷 Your QR code will appear here
+                    </div>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function confirmOverride() {
+        return confirm("CRITICAL WARNING:\n\nGenerate Master Override QR Code?\n\nThis action will be logged.");
+    }
+    </script>
+</body>
+</html>
