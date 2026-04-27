@@ -14,24 +14,34 @@ A Flask-based web application designed to generate and manage secure entry QR co
 * **Frontend:** HTML5, CSS3, JavaScript (Quill.js)
 * **Environment:** Cross-platform support (Windows/Linux/MacOS)
 
+## 📌 Deployment Note
+This project is designed for local or internal deployment environments. It is not currently hosted for public production use.
+
 ## 📁 Repository Structure
-- `app.py`: Main application logic and routing.
-- `static/`: Contains CSS and generated QR code images.
-- `templates/`: HTML templates for the UI.
-- `.env.example`: Template for local configuration.
 
 ```
 qr-generator/
-|
 ├── app.py
 ├── requirements.txt
-├── .env.example             ← copy to .env and fill in
+├── .env.example
 ├── README.md
 ├── SETUP.md
+|
 ├── templates/
 │   ├── index.html
 │   └── settings.html
+|
 └── static/
     ├── styles.css
     └── qrcodes/
 ```
+
+### File/Folder Description
+
+- `app.py` – Main Flask application containing routes and core logic.
+- `requirements.txt` – List of Python dependencies.
+- `.env.example` – Template for environment variables (copy as `.env` and configure).
+- `templates/` – HTML templates for the user interface.
+- `static/` – Static assets including CSS and generated QR code images.
+- `SETUP.md` – Step-by-step installation and local setup guide.
+- `README.md` – Project overview and documentation.
