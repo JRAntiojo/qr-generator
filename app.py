@@ -114,8 +114,6 @@ def index():
                 f"➢ Timestamp: {override_timestamp}<br><br>"
                 f"Please verify if this action was authorized."
             )
-
-            # {datetime.datetime.now()}
             
             send_email(email_subject, email_body, EMAIL_ADDRESS, override_path)
             qr_filename = "override.png"
