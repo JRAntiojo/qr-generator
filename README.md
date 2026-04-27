@@ -44,8 +44,8 @@ qr-generator/
 - `app.py` – Main Flask application containing routes and core logic.
 - `requirements.txt` – List of Python dependencies.
 - `.env.example` – Template for environment variables (copy as `.env` and configure).
+- `run.bat` – One-click launcher to automatically set up the environment, start the Flask server, and open the application in the browser (Windows only).
 - `templates/` – HTML templates for the user interface.
 - `static/` – Static assets including CSS and generated QR code images.
-- `run.bat` – One-click launcher to automatically set up the environment, start the Flask server, and open the application in the browser (Windows only).
 - `SETUP.md` – Step-by-step installation and local setup guide.
 - `README.md` – Project overview and documentation.
